@@ -6,9 +6,21 @@
     "schema_contract": "LMIV-CONTRACT-MARKER"
   },
   "categories": [
-    { "id": "burger", "label": "Burger aus der Glut", "label_en": "Burgers from the Ember" },
-    { "id": "beilage", "label": "Beilagen", "label_en": "Sides" },
-    { "id": "nachspeise", "label": "Nachspeisen", "label_en": "Desserts" }
+    {
+      "id": "burger",
+      "label": "Burger aus der Glut",
+      "label_en": "Burgers from the Ember"
+    },
+    {
+      "id": "beilage",
+      "label": "Beilagen",
+      "label_en": "Sides"
+    },
+    {
+      "id": "nachspeise",
+      "label": "Nachspeisen",
+      "label_en": "Desserts"
+    }
   ],
   "items": [
     {
@@ -16,12 +28,20 @@
       "name": "Der Klassiker",
       "name_en": "The Classic",
       "description": "Hausgemachtes Beef-Patty, gereifter Cheddar, Bauernsalat, Ochsenherz-Tomate, rote Zwiebel, Glut-Sauce im Sesam-Bun",
-      "price_eur": 14.50,
+      "price_eur": 14.5,
       "category": "burger",
-      "data-allergens": ["A", "C", "G", "M", "N"],
+      "data-allergens": [
+        "A",
+        "C",
+        "G",
+        "M",
+        "N"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["meat"],
+      "diet": [
+        "meat"
+      ],
       "image": "../assets/images/menu/patty-classic.jpg"
     },
     {
@@ -29,12 +49,21 @@
       "name": "Der Bayer",
       "name_en": "The Bavarian",
       "description": "Beef-Patty, Allgäuer Bergkäse, geschmorte Röstzwiebeln, Senf-Sauerkraut, dunkles Breze-Bun",
-      "price_eur": 16.50,
+      "price_eur": 16.5,
       "category": "burger",
-      "data-allergens": ["A", "C", "G", "L", "M", "N"],
+      "data-allergens": [
+        "A",
+        "C",
+        "G",
+        "L",
+        "M",
+        "N"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["meat"],
+      "diet": [
+        "meat"
+      ],
       "image": "../assets/images/menu/patty-bayer.jpg"
     },
     {
@@ -42,38 +71,63 @@
       "name": "Der Schmelzer",
       "name_en": "The Melt",
       "description": "Doppeltes Beef-Patty, dreierlei Käse, karamellisierte Zwiebel, Käse-Bauernsalat, Glut-Sauce",
-      "price_eur": 17.90,
+      "price_eur": 17.9,
       "category": "burger",
-      "data-allergens": ["A", "C", "G", "M", "N"],
+      "data-allergens": [
+        "A",
+        "C",
+        "G",
+        "M",
+        "N"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["meat"],
-      "image": "../assets/images/menu/patty-schmelzer.svg"
+      "diet": [
+        "meat"
+      ],
+      "image": "../assets/images/menu/patty-schmelzer.jpg"
     },
     {
       "id": "patty-rauch",
       "name": "Der Rauch",
       "name_en": "The Smoke",
       "description": "Über Buchenholz geräuchertes Beef-Patty, knuspriger Bauchspeck, BBQ-Glut-Sauce, Cheddar",
-      "price_eur": 17.50,
+      "price_eur": 17.5,
       "category": "burger",
-      "data-allergens": ["A", "C", "G", "M", "N", "O"],
+      "data-allergens": [
+        "A",
+        "C",
+        "G",
+        "M",
+        "N",
+        "O"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["meat"],
-      "image": "../assets/images/menu/patty-rauch.svg"
+      "diet": [
+        "meat"
+      ],
+      "image": "../assets/images/menu/patty-rauch.jpg"
     },
     {
       "id": "patty-henne",
       "name": "Die Henne",
       "name_en": "The Hen",
       "description": "In Buttermilch gebackenes Hähnchen-Filet, Krautsalat, Honig-Senf-Mayo, Sesam-Bun",
-      "price_eur": 15.50,
+      "price_eur": 15.5,
       "category": "burger",
-      "data-allergens": ["A", "C", "G", "M", "N"],
+      "data-allergens": [
+        "A",
+        "C",
+        "G",
+        "M",
+        "N"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["poultry"],
+      "diet": [
+        "poultry"
+      ],
       "image": "../assets/images/menu/patty-henne.jpg"
     },
     {
@@ -81,12 +135,19 @@
       "name": "Der Garten",
       "name_en": "The Garden",
       "description": "Gegrilltes Kräuterseitling-Patty, Halloumi, geröstetes Sommergemüse, Joghurt-Minze",
-      "price_eur": 14.90,
+      "price_eur": 14.9,
       "category": "burger",
-      "data-allergens": ["A", "C", "G", "N"],
+      "data-allergens": [
+        "A",
+        "C",
+        "G",
+        "N"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegetarian"],
+      "diet": [
+        "vegetarian"
+      ],
       "image": "../assets/images/menu/patty-garten.jpg"
     },
     {
@@ -94,12 +155,19 @@
       "name": "Die Wurzel",
       "name_en": "The Root",
       "description": "Rote-Bete-Bohnen-Patty, Cashew-Glut-Creme, Rucola, eingelegte Zwiebel, vollwertig vegan",
-      "price_eur": 14.90,
+      "price_eur": 14.9,
       "category": "burger",
-      "data-allergens": ["A", "F", "H", "N"],
+      "data-allergens": [
+        "A",
+        "F",
+        "H",
+        "N"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegan"],
+      "diet": [
+        "vegan"
+      ],
       "image": "../assets/images/menu/patty-wurzel.jpg"
     },
     {
@@ -107,91 +175,134 @@
       "name": "Glut-Pommes",
       "name_en": "Ember Fries",
       "description": "Im Ofen geröstete Kartoffelspalten, Glut-Salz, dazu Kräuter-Aioli",
-      "price_eur": 5.90,
+      "price_eur": 5.9,
       "category": "beilage",
-      "data-allergens": ["C", "M"],
+      "data-allergens": [
+        "C",
+        "M"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegetarian"],
-      "image": "../assets/images/menu/side-glut-pommes.svg"
+      "diet": [
+        "vegetarian"
+      ],
+      "image": "../assets/images/menu/side-glut-pommes.jpg"
     },
     {
       "id": "side-suesskartoffel",
       "name": "Süßkartoffel-Fritten",
       "name_en": "Sweet Potato Fries",
       "description": "Süßkartoffel-Fritten mit Rauchpaprika, dazu vegane Chipotle-Sauce",
-      "price_eur": 6.90,
+      "price_eur": 6.9,
       "category": "beilage",
-      "data-allergens": ["F"],
+      "data-allergens": [
+        "F"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegan"],
-      "image": "../assets/images/menu/side-suesskartoffel.svg"
+      "diet": [
+        "vegan"
+      ],
+      "image": "../assets/images/menu/side-suesskartoffel.jpg"
     },
     {
       "id": "side-krautsalat",
       "name": "Bayerischer Krautsalat",
       "name_en": "Bavarian Slaw",
       "description": "Weißkraut, Karotte, Kümmel, cremiges Buttermilch-Dressing",
-      "price_eur": 4.90,
+      "price_eur": 4.9,
       "category": "beilage",
-      "data-allergens": ["C", "G", "M"],
+      "data-allergens": [
+        "C",
+        "G",
+        "M"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegetarian"],
-      "image": "../assets/images/menu/side-krautsalat.svg"
+      "diet": [
+        "vegetarian"
+      ],
+      "image": "../assets/images/menu/side-krautsalat.jpg"
     },
     {
       "id": "side-obatzda",
       "name": "Obatzda-Brett",
       "name_en": "Obatzda Board",
       "description": "Hausgemachter Obatzda, Radieschen, rote Zwiebel, warme Breze-Stücke",
-      "price_eur": 7.90,
+      "price_eur": 7.9,
       "category": "beilage",
-      "data-allergens": ["A", "G", "L"],
+      "data-allergens": [
+        "A",
+        "G",
+        "L"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegetarian"],
-      "image": "../assets/images/menu/side-obatzda.svg"
+      "diet": [
+        "vegetarian"
+      ],
+      "image": "../assets/images/menu/side-obatzda.jpg"
     },
     {
       "id": "side-dip-trio",
       "name": "Glut-Dip-Trio",
       "name_en": "Ember Dip Trio",
       "description": "Drei hausgemachte Saucen: Glut-BBQ, Kräuter-Aioli und Rauch-Mayo",
-      "price_eur": 4.90,
+      "price_eur": 4.9,
       "category": "beilage",
-      "data-allergens": ["C", "F", "G", "M"],
+      "data-allergens": [
+        "C",
+        "F",
+        "G",
+        "M"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegetarian"],
-      "image": "../assets/images/menu/side-dip-trio.svg"
+      "diet": [
+        "vegetarian"
+      ],
+      "image": "../assets/images/menu/side-dip-trio.jpg"
     },
     {
       "id": "dessert-apfelkuecherl",
       "name": "Apfelkücherl",
       "name_en": "Apple Fritters",
       "description": "Warme Apfelkücherl im Ausbackteig, Zimt-Zucker, Vanille-Creme",
-      "price_eur": 6.90,
+      "price_eur": 6.9,
       "category": "nachspeise",
-      "data-allergens": ["A", "C", "G", "H"],
+      "data-allergens": [
+        "A",
+        "C",
+        "G",
+        "H"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegetarian"],
-      "image": "../assets/images/menu/dessert-apfelkuecherl.svg"
+      "diet": [
+        "vegetarian"
+      ],
+      "image": "../assets/images/menu/dessert-apfelkuecherl.jpg"
     },
     {
       "id": "dessert-schoko-glut",
       "name": "Schoko-Glut-Küchlein",
       "name_en": "Molten Chocolate Cake",
       "description": "Warmes Schokoladenküchlein mit flüssigem Kern, gesalzenes Karamell-Eis",
-      "price_eur": 7.50,
+      "price_eur": 7.5,
       "category": "nachspeise",
-      "data-allergens": ["A", "C", "F", "G", "H"],
+      "data-allergens": [
+        "A",
+        "C",
+        "F",
+        "G",
+        "H"
+      ],
       "data-additives": [],
       "data-age-restriction": null,
-      "diet": ["vegetarian"],
-      "image": "../assets/images/menu/dessert-schoko-glut.svg"
+      "diet": [
+        "vegetarian"
+      ],
+      "image": "../assets/images/menu/dessert-schoko-glut.jpg"
     }
   ]
 }

@@ -34,7 +34,7 @@
         '<img src="' + esc(item.image) + '" alt="' + esc(item.name) +
           ' — Gericht aus dem Ofnstube-Menü" width="320" height="420" loading="lazy" ' +
           'onerror="this.onerror=null;this.src=&quot;' + esc(item.image).replace('.jpg', '.svg') + '&quot;">' +
-        '<span class="media__tag">Bildplatzhalter</span>' +
+        
       '</div>' +
       '<div class="dish__body">' +
         '<div class="dish__head">' +
