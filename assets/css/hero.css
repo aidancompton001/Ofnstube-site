@@ -1,0 +1,230 @@
+/* ============================================================
+   Ofnstube · hero.css  ·  Stage 1.5 redesign
+   Asymmetric, food-first homepage hero (NO centered text, NO
+   canvas-particle). Compact page-hero band for inner pages.
+   ============================================================ */
+
+/* ===== Homepage hero — asymmetric split ===== */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--smoked-black);
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* — Food panel (≈ 55% on desktop, fullbleed image slot) — */
+.hero__visual {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 48svh;
+  background: var(--ink-850);
+  order: -1; /* image leads on mobile */
+}
+.hero__media {
+  position: absolute;
+  inset: -8% -8% -8% -8%;
+  width: 116%;
+  height: 116%;
+  object-fit: cover;
+  will-change: transform;
+}
+.hero__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(185deg, rgba(13,13,13,.62), transparent 34%, rgba(13,13,13,.28)),
+    radial-gradient(ellipse 64% 52% at 82% 104%, var(--ember-glow-2), transparent 72%);
+}
+.hero__ring {
+  position: absolute;
+  top: -24%;
+  right: -18%;
+  width: min(78vw, 600px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: repeating-radial-gradient(circle at 50% 50%,
+    transparent 0, transparent 30px,
+    var(--hairline-warm) 30px, var(--hairline-warm) 32px);
+  -webkit-mask: radial-gradient(circle, #000 28%, transparent 72%);
+          mask: radial-gradient(circle, #000 28%, transparent 72%);
+  opacity: .7;
+  will-change: transform;
+}
+.hero__tag {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 2;
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  background: rgba(8, 8, 8, .68);
+  padding: 5px 9px;
+  border-radius: var(--r-xs);
+}
+.hero__meta {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  writing-mode: vertical-rl;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--bone);
+}
+
+/* — Claim side — */
+.hero__claim {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-5);
+  padding: clamp(40px, 7vh, 88px) var(--gutter);
+  border-top: 1px solid var(--hairline);
+}
+.hero__kicker {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: var(--fs-kicker);
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.hero__idx { color: var(--ember-orange); }
+.hero__kicker::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--hairline);
+}
+.hero__headline {
+  font-family: var(--font-display);
+  font-size: var(--fs-mega);
+  line-height: .95;
+  letter-spacing: -.035em;
+  font-weight: 540;
+  font-variation-settings: 'opsz' 144, 'SOFT' 0, 'WONK' 0;
+  overflow-wrap: break-word;
+}
+.hero__headline .ln { display: block; }
+@media (max-width: 560px) {
+  .hero__headline { letter-spacing: -.02em; }
+  .hero__claim { gap: var(--sp-4); }
+}
+.hero__headline .ln { display: block; }
+.hero__headline .ln--lg { margin-left: .03em; }
+.hero__headline .ln--glut {
+  font-style: italic;
+  font-weight: 470;
+  color: var(--ember-orange);
+}
+.hero__sub {
+  max-width: 38ch;
+  font-size: var(--fs-body-lg);
+  color: var(--text-dim);
+}
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  flex-wrap: wrap;
+  margin-top: var(--sp-2);
+}
+.hero__scroll {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: var(--sp-3);
+  font-size: .71rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.hero__scroll::before {
+  content: "";
+  width: 48px;
+  height: 1px;
+  background: var(--ember-orange);
+  transform-origin: left center;
+  animation: hero-line 2.4s var(--ease-in-out) infinite;
+}
+@keyframes hero-line {
+  0%, 100% { transform: scaleX(.35); opacity: .5; }
+  50%      { transform: scaleX(1);   opacity: 1; }
+}
+
+@media (min-width: 1024px) {
+  .hero { grid-template-columns: 1fr 1.12fr; min-height: 100svh; }
+  .hero__visual { order: 0; min-height: 100svh; border-left: 1px solid var(--hairline); }
+  .hero__claim { border-top: 0; padding-block: calc(var(--header-h) + 3.5vh) 5vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll::before { animation: none; transform: scaleX(1); }
+}
+
+/* ===== Compact page-hero (inner pages) ===== */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--header-h) + clamp(46px, 9vh, 104px)) var(--gutter) clamp(40px, 6vh, 72px);
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--hairline);
+  isolation: isolate;
+}
+.page-hero__rings {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.page-hero__rings .glut-ring {
+  --ring-gap: 32px;
+  width: 620px;
+  inset: -240px -200px auto auto;
+  opacity: .26;
+}
+.page-hero__inner { max-width: var(--container); margin-inline: auto; }
+.page-hero h1 {
+  font-size: clamp(2.6rem, 1.3rem + 4.4vw, 4.6rem);
+  margin-top: var(--sp-3);
+  max-width: 20ch;
+  letter-spacing: -.03em;
+}
+.page-hero__sub {
+  margin-top: var(--sp-4);
+  max-width: 58ch;
+  color: var(--text-dim);
+  font-size: var(--fs-body-lg);
+}
+
+/* — Breadcrumb — */
+.breadcrumb { margin-bottom: var(--sp-2); }
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-small);
+  color: var(--text-faint);
+}
+.breadcrumb a { color: var(--text-dim); }
+.breadcrumb a:hover { color: var(--ember-orange); }
+.breadcrumb li[aria-current] { color: var(--ember-orange); }
+.breadcrumb .sep { opacity: .5; }

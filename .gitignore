@@ -1,0 +1,34 @@
+# Credentials & secrets
+docs/CREDENTIALS.md
+*.env
+*.env.local
+.env*
+
+# Node / build
+node_modules/
+dist/
+.next/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Higgsfield outputs (large media)
+docs/content/generated/
+*.mp4
+*.mov
+*.webm
+
+# Logs
+*.log
+npm-debug.log*
+
+# Verify outputs
+verify/last_run.json

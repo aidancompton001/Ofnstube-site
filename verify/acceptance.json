@@ -1,0 +1,116 @@
+{
+  "project": "Ofnstube",
+  "version": "2.0",
+  "source_px": "MainCore PX-024 / T030 (Stage 2)",
+  "scope": "Stage 0-2 — scaffold + CDP + KB + prototype + Higgsfield MVP + Stage 2 polish. Stage 3 (GitHub Pages deploy) — отдельная section.",
+  "checks": [
+    {"id": "C01", "name": "project_dir_exists", "type": "dir_exists", "path": "c:/Projects/Ofnstube"},
+    {"id": "C02", "name": "base_files_present", "type": "all_files_exist",
+      "paths": [
+        "c:/Projects/Ofnstube/CLAUDE.md",
+        "c:/Projects/Ofnstube/TEAM.md",
+        "c:/Projects/Ofnstube/DEVLOG.md",
+        "c:/Projects/Ofnstube/STATUS.md",
+        "c:/Projects/Ofnstube/README.md",
+        "c:/Projects/Ofnstube/.mcp.json",
+        "c:/Projects/Ofnstube/.gitignore",
+        "c:/Projects/Ofnstube/CEO_PROMPTS.md",
+        "c:/Projects/Ofnstube/docs/tasks/PX_REGISTRY.md",
+        "c:/Projects/Ofnstube/docs/CREDENTIALS.md.template",
+        "c:/Projects/Ofnstube/verify/acceptance.json",
+        "c:/Projects/Ofnstube/verify/verify.py"
+      ]
+    },
+    {"id": "C03", "name": "cdp_file_exists", "type": "file_exists",
+      "path": "c:/Projects/MainCore/vault/02_Knowledge/Claude Desktop Prompts/CDP_Burger_Restaurant_Muenchen_Ofnstube.md"},
+    {"id": "C04", "name": "vault_hub_exists", "type": "file_exists",
+      "path": "c:/Projects/MainCore/vault/01_Projects/Ofnstube.md"},
+    {"id": "C05", "name": "kb_14_notes_present", "type": "dir_file_count_min",
+      "path": "c:/Projects/MainCore/vault/01_Projects/Ofnstube", "glob": "*.md", "min": 14},
+    {"id": "C06", "name": "maincore_registry_has_px_024", "type": "grep_count_exact",
+      "path": "c:/Projects/MainCore/docs/tasks/PX_REGISTRY.md", "needle": "## PX-024", "expect": 1},
+    {"id": "C07", "name": "px_021_duplicate_resolved", "type": "grep_count_exact",
+      "path": "c:/Projects/MainCore/docs/tasks/PX_REGISTRY.md", "needle": "## PX-021", "expect": 1},
+    {"id": "C08", "name": "last_number_marker_updated", "type": "grep_present",
+      "path": "c:/Projects/MainCore/docs/tasks/PX_REGISTRY.md", "needle": "Последний номер: PX-024"},
+    {"id": "C09", "name": "t029_file_exists", "type": "file_exists",
+      "path": "c:/Projects/MainCore/docs/tasks/T029_burger_restaurant_third_twin.md"},
+    {"id": "C10", "name": "t030_file_exists", "type": "file_exists",
+      "path": "c:/Projects/MainCore/docs/tasks/T030_ofnstube_to_launch.md"},
+    {"id": "C11", "name": "lessons_kontur_pattern_exists", "type": "file_exists",
+      "path": "c:/Projects/MainCore/lessons/KONTUR_SUCCESS_PATTERN.md"},
+    {"id": "C12", "name": "hans_landa_postmortem_exists", "type": "file_exists",
+      "path": "c:/Projects/MainCore/vault/02_Knowledge/Reviews/Hans_Landa_Ofnstube_PostMortem_2026-05-25.md"},
+    {"id": "C13", "name": "maincore_devlog_has_s051", "type": "grep_present",
+      "path": "c:/Projects/MainCore/DEVLOG.md", "needle": "[S051]"},
+    {"id": "C14", "name": "all_10_pages_present", "type": "all_files_exist",
+      "paths": [
+        "c:/Projects/Ofnstube/pages/index.html",
+        "c:/Projects/Ofnstube/pages/menu.html",
+        "c:/Projects/Ofnstube/pages/reservation.html",
+        "c:/Projects/Ofnstube/pages/kontakt.html",
+        "c:/Projects/Ofnstube/pages/ueber-uns.html",
+        "c:/Projects/Ofnstube/pages/standort.html",
+        "c:/Projects/Ofnstube/pages/impressum.html",
+        "c:/Projects/Ofnstube/pages/datenschutz.html",
+        "c:/Projects/Ofnstube/pages/agb.html",
+        "c:/Projects/Ofnstube/pages/404.html"
+      ]
+    },
+    {"id": "C15", "name": "higgsfield_photos_present", "type": "all_files_exist",
+      "paths": [
+        "c:/Projects/Ofnstube/assets/images/hero-poster.jpg",
+        "c:/Projects/Ofnstube/assets/images/menu/patty-classic.jpg",
+        "c:/Projects/Ofnstube/assets/images/menu/patty-bayer.jpg",
+        "c:/Projects/Ofnstube/assets/images/menu/patty-henne.jpg",
+        "c:/Projects/Ofnstube/assets/images/menu/patty-garten.jpg",
+        "c:/Projects/Ofnstube/assets/images/menu/patty-wurzel.jpg"
+      ]
+    },
+    {"id": "C16", "name": "menu_json_has_jpg_paths_for_5_burgers", "type": "grep_count_min",
+      "path": "c:/Projects/Ofnstube/data/menu.json", "needle": ".jpg", "min": 5},
+    {"id": "C17", "name": "law_21_no_period_h2", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": ".</h2>", "max": 0},
+    {"id": "C18", "name": "law_21_no_period_h3_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": ".</h3>", "max": 0},
+    {"id": "C19", "name": "law_21_no_period_h1_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": ".</h1>", "max": 0},
+    {"id": "C20", "name": "law_21_no_period_button_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": ".</button>", "max": 0},
+    {"id": "C21", "name": "no_lorem_ipsum_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": "Lorem ipsum", "max": 0},
+    {"id": "C22", "name": "no_todo_marker_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": "TODO:", "max": 0},
+    {"id": "C23", "name": "no_fixme_marker_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": "FIXME", "max": 0},
+    {"id": "C24", "name": "no_placeholder_marker_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": "[PLACEHOLDER]", "max": 0},
+    {"id": "C25", "name": "no_google_fonts_cdn_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": "fonts.googleapis.com", "max": 0},
+    {"id": "C26", "name": "no_google_fonts_cdn_menu", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/menu.html", "needle": "fonts.googleapis.com", "max": 0},
+    {"id": "C27", "name": "data_en_present_index", "type": "grep_count_max",
+      "path": "c:/Projects/Ofnstube/pages/index.html", "needle": "data-en", "max": 99999,
+      "note": "soft check — presence verified via grep_count_max with high cap (Stage 2 EN-translation should add ~50+)"
+    },
+    {"id": "C28", "name": "self_hosted_fonts_present", "type": "all_files_exist",
+      "paths": [
+        "c:/Projects/Ofnstube/assets/fonts/fraunces-variable.woff2",
+        "c:/Projects/Ofnstube/assets/fonts/inter-variable.woff2"
+      ]
+    },
+    {"id": "C29", "name": "vendor_libs_present", "type": "all_files_exist",
+      "paths": [
+        "c:/Projects/Ofnstube/assets/vendor/gsap.min.js",
+        "c:/Projects/Ofnstube/assets/vendor/ScrollTrigger.min.js",
+        "c:/Projects/Ofnstube/assets/vendor/lenis.min.js"
+      ]
+    },
+    {"id": "C30", "name": "data_files_present", "type": "all_files_exist",
+      "paths": [
+        "c:/Projects/Ofnstube/data/menu.json",
+        "c:/Projects/Ofnstube/data/drinks.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+/* ============================================================
+   Ofnstube · motion.css
+   Scroll-reveal initial states + reduced-motion fallbacks.
+   GSAP animates [data-reveal]; CSS only guards the no-flash
+   initial state and the no-JS / reduced-motion safety net.
+   ============================================================ */
+
+/* Initial hidden state applies ONLY when JS is on AND motion
+   is allowed AND GSAP has not declared a fallback.
+   No-JS users and reduced-motion users see everything. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js:not(.reveal-fallback) [data-reveal] {
+    opacity: 0;
+    will-change: opacity, transform;
+  }
+  html.js:not(.reveal-fallback) [data-reveal="up"]    { transform: translateY(30px); }
+  html.js:not(.reveal-fallback) [data-reveal="left"]  { transform: translateX(-34px); }
+  html.js:not(.reveal-fallback) [data-reveal="right"] { transform: translateX(34px); }
+  html.js:not(.reveal-fallback) [data-reveal="scale"] { transform: scale(.94); }
+}
+
+/* Safety net: if GSAP fails or reduced-motion is set, reveal all */
+html.reveal-fallback [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* — Scroll cue — */
+.scroll-cue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-faint);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.scroll-cue__track {
+  width: 24px; height: 38px;
+  border: 2px solid var(--hairline-strong);
+  border-radius: var(--r-pill);
+  position: relative;
+}
+.scroll-cue__track::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 7px;
+  width: 4px; height: 8px;
+  margin-left: -2px;
+  border-radius: var(--r-pill);
+  background: var(--ember-orange);
+  animation: cue-drop 1.8s var(--ease-in-out) infinite;
+}
+@keyframes cue-drop {
+  0%   { opacity: 0; transform: translateY(0); }
+  35%  { opacity: 1; }
+  75%  { opacity: 1; transform: translateY(14px); }
+  100% { opacity: 0; transform: translateY(14px); }
+}
+
+/* — Ember flicker (used by canvas-off fallback gradient) — */
+@keyframes ember-flicker {
+  0%, 100% { opacity: .82; }
+  50%      { opacity: 1; }
+}
+
+/* — Marquee-free underline shimmer for links on hover handled in components — */
+
+/* — Hover lift utility — */
+.lift { transition: transform var(--dur) var(--ease-out); }
+.lift:hover { transform: translateY(-4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue__track::after { animation: none; opacity: 1; }
+  .lift:hover { transform: none; }
+}
+
+/* — Stage 1.5 · marquee strip — */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none !important; }
+}

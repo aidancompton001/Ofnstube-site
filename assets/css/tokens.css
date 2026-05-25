@@ -1,0 +1,130 @@
+/* ============================================================
+   Ofnstube · tokens.css
+   Design tokens — single source of truth.
+   Bavarian craft-burger · smoked-black + ember + bone.
+   ============================================================ */
+
+:root {
+  /* — Brand palette (CDP-locked) — */
+  --smoked-black: #0d0d0d;
+  --ember-orange: #ff6b1a;
+  --bone:         #f5e6d3;
+  --olive:        #5c6b2c;   /* decorative ONLY — never text */
+  --ink-900:      #1a1a1a;
+  --warn:         #c41e3a;
+  --ok-500:       #5c8a3c;
+
+  /* — Derived dark surfaces — */
+  --ink-850:      #181614;
+  --ink-800:      #232020;
+  --ink-700:      #2e2a26;
+  --surface:        var(--smoked-black);
+  --surface-raised: var(--ink-900);
+  --surface-sunken: #070707;
+
+  /* — Light (bone) surfaces — */
+  --surface-bone:   #f5e6d3;
+  --surface-bone-2: #ecdcc1;
+
+  /* — Hairlines — */
+  --hairline:        rgba(245, 230, 211, .12);
+  --hairline-strong: rgba(245, 230, 211, .26);
+  --hairline-bone:   rgba(26, 26, 26, .14);
+
+  /* — Text on dark — */
+  --text:       var(--bone);
+  --text-dim:   rgba(245, 230, 211, .66);
+  --text-faint: rgba(245, 230, 211, .40);
+
+  /* — Text on bone — */
+  --text-on-bone:     #1a1a1a;
+  --text-on-bone-dim: #5b5046;
+
+  /* — Text on ember (smoked-black, 5.1:1 AA) — */
+  --text-on-ember: #0d0d0d;
+
+  /* — Ember scale — */
+  --ember-bright:  #ff8a40;
+  --ember-deep:    #d9530f;
+  --ember-glow-1:  rgba(255, 107, 26, .55);
+  --ember-glow-2:  rgba(255, 107, 26, .30);
+  --ember-glow-3:  rgba(255, 107, 26, .12);
+
+  /* — Typography families — */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* — Fluid type scale — */
+  --fs-eyebrow:  .78rem;
+  --fs-small:    .86rem;
+  --fs-body:     1.0625rem;
+  --fs-body-lg:  1.1875rem;
+  --fs-h4: clamp(1.15rem, .62rem + 1.0vw, 1.45rem);
+  --fs-h3: clamp(1.45rem, .90rem + 1.7vw, 2.15rem);
+  --fs-h2: clamp(2.05rem, 1.20rem + 2.9vw, 3.55rem);
+  --fs-h1: clamp(2.70rem, 1.30rem + 5.4vw, 5.75rem);
+  --fs-display: clamp(3.10rem, 1.10rem + 7.4vw, 7.10rem);
+
+  /* — Line-heights (A: headings >= 1.05) — */
+  --lh-tight: 1.06;
+  --lh-snug:  1.20;
+  --lh-body:  1.66;
+
+  /* — Tracking — */
+  --tracking-eyebrow: .22em;
+  --tracking-tight:  -.018em;
+
+  /* — Spacing — */
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: .75rem;
+  --sp-4: 1rem;    --sp-5: 1.5rem;  --sp-6: 2rem;
+  --sp-7: 3rem;    --sp-8: 4rem;    --sp-9: 6rem;
+
+  /* — Vertical rhythm (B: ONE section system) — */
+  --section-y: clamp(64px, 10vh, 120px);
+  --gutter:    clamp(20px, 5vw, 64px);
+
+  /* — Layout widths — */
+  --container:        1200px;
+  --container-wide:   1380px;
+  --container-narrow: 760px;
+  --header-h: 74px;
+
+  /* — Radii — */
+  --r-xs: 4px;  --r-sm: 9px;  --r-md: 16px;
+  --r-lg: 24px; --r-pill: 999px;
+
+  /* — Borders — */
+  --border:        1px solid var(--hairline);
+  --border-strong: 1px solid var(--hairline-strong);
+
+  /* — Shadows & Glut-Ring glow — */
+  --shadow-card:  0 22px 60px -34px rgba(0, 0, 0, .92);
+  --shadow-pop:   0 30px 80px -30px rgba(0, 0, 0, .96);
+  --glut-soft:    0 0 18px var(--ember-glow-2), 0 0 44px var(--ember-glow-3);
+  --glut-strong:  0 0 22px var(--ember-glow-1), 0 0 52px var(--ember-glow-2);
+  --glut-focus:   0 0 0 2px var(--smoked-black), 0 0 0 4px var(--ember-orange), 0 0 20px var(--ember-glow-1);
+
+  /* — Motion — */
+  --ease-out:    cubic-bezier(.22, .61, .36, 1);
+  --ease-in-out: cubic-bezier(.65, .05, .36, 1);
+  --dur-fast: .18s;
+  --dur:      .32s;
+  --dur-slow: .6s;
+
+  /* — z-index scale — */
+  --z-base:   1;
+  --z-fab:    60;
+  --z-header: 80;
+  --z-banner: 90;
+  --z-modal:  100;
+
+  /* — Stage 1.5 · editorial redesign — */
+  --fs-mega:    clamp(2.5rem, 1.0rem + 5.2vw, 5.9rem);
+  --fs-section: clamp(2.35rem, 1.1rem + 4.6vw, 5.6rem);
+  --fs-kicker:  .73rem;
+  --hairline-warm: rgba(255, 107, 26, .22);
+  --ease-glut:  cubic-bezier(.16, .84, .44, 1);
+  --paper:      #efe1c8;
+
+  color-scheme: dark;
+}

@@ -1,0 +1,275 @@
+/* ============================================================
+   Ofnstube · menu.css  ·  Stage 1.5 redesign
+   Editorial menu — alternating full-width dish rows (magazine
+   spread), magazine numbering, typographic prices. NOT an
+   equal-card grid. Class names match menu-renderer.js output.
+   ============================================================ */
+
+/* ===== Category filter ===== */
+.menu-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--sp-7);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--hairline);
+}
+.menu-filter { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.filter-btn {
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--hairline-strong);
+  color: var(--text-dim);
+  transition: color var(--dur), border-color var(--dur), background var(--dur);
+}
+.filter-btn:hover { color: var(--bone); border-color: var(--bone); }
+.filter-btn[aria-pressed="true"] {
+  background: var(--ember-orange);
+  color: var(--text-on-ember);
+  border-color: var(--ember-orange);
+}
+
+/* ===== Category group ===== */
+.menu-group { margin-bottom: clamp(48px, 8vw, 104px); }
+.menu-group:last-child { margin-bottom: 0; }
+.menu-group__head {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-3);
+}
+.menu-group__head h2 {
+  font-size: var(--fs-section);
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+.menu-group__head h2 em {
+  font-style: italic;
+  color: var(--ember-orange);
+}
+.menu-group__rule {
+  flex: 1;
+  height: 1px;
+  margin-bottom: .55em;
+  background: var(--hairline);
+}
+.menu-group__count {
+  margin-bottom: .55em;
+  font-family: var(--font-body);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* ===== Dish rows — editorial, alternating ===== */
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  counter-reset: dish;
+}
+
+.dish {
+  counter-increment: dish;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: clamp(20px, 4vw, 56px);
+  align-items: center;
+  padding-block: clamp(26px, 4vw, 52px);
+  border-top: 1px solid var(--hairline);
+}
+.dish:last-child { border-bottom: 1px solid var(--hairline); }
+
+.dish__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-sm);
+  background: var(--ink-850);
+  aspect-ratio: 5 / 4;
+}
+.dish__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s var(--ease-glut);
+}
+.dish:hover .dish__media img { transform: scale(1.05); }
+/* editorial rows — hover is image-scale + ember top-rule + number, no glow box */
+.dish.glut-hover:hover { box-shadow: none; }
+.dish.glut-hover:hover,
+.dish:hover { border-top-color: var(--hairline-warm); }
+
+.dish__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.dish__body::before {
+  content: counter(dish, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: .96rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: var(--text-faint);
+  transition: color var(--dur);
+}
+.dish:hover .dish__body::before { color: var(--ember-orange); }
+
+.dish__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+.dish__name {
+  font-size: clamp(1.5rem, .9rem + 1.7vw, 2.5rem);
+  line-height: 1.04;
+  letter-spacing: -.02em;
+}
+.dish__price {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, .9rem + .8vw, 1.6rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--ember-orange);
+  white-space: nowrap;
+}
+.dish__desc {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  max-width: 52ch;
+}
+.dish__allergens { gap: 6px; }
+.dish__allergens .chip { font-size: .71rem; padding: 4px 9px; }
+.dish__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-1);
+}
+
+/* alternate the image side — magazine rhythm */
+.dish:nth-child(even) .dish__media { order: 2; }
+
+/* first dish of a category = feature */
+.dish:first-child {
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+  padding-top: clamp(30px, 5vw, 60px);
+}
+.dish:first-child .dish__media { aspect-ratio: 16 / 11; }
+.dish:first-child .dish__name { font-size: clamp(1.9rem, 1.1rem + 2.6vw, 3.4rem); }
+
+@media (max-width: 760px) {
+  .dish,
+  .dish:first-child { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .dish:nth-child(even) .dish__media { order: 0; }
+  .dish__media,
+  .dish:first-child .dish__media { aspect-ratio: 16 / 10; }
+}
+
+/* ===== Drinks ===== */
+.drink-card {
+  background: var(--surface-raised);
+  border: var(--border);
+  border-radius: var(--r-md);
+  padding: clamp(22px, 3vw, 38px);
+}
+.drink-card h3 {
+  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: var(--sp-3);
+}
+.drink-list { display: flex; flex-direction: column; }
+.drink {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+  flex-wrap: wrap;
+}
+.drink:last-child { border-bottom: 0; }
+.drink__main { display: flex; align-items: baseline; gap: var(--sp-3); flex-wrap: wrap; }
+.drink__name {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 540;
+}
+.drink__meta { display: flex; align-items: baseline; gap: var(--sp-4); }
+.drink__size { font-size: .82rem; color: var(--text-faint); }
+.drink__price {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--ember-orange);
+}
+.drink__sub {
+  width: 100%;
+  font-size: .8rem;
+  color: var(--text-faint);
+  margin-top: 3px;
+}
+
+/* ===== LMIV legend ===== */
+.legend {
+  background: var(--surface-raised);
+  border: var(--border);
+  border-radius: var(--r-md);
+  padding: clamp(24px, 3vw, 40px);
+}
+.legend h3 {
+  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: var(--sp-4);
+}
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: 10px var(--sp-5);
+}
+.legend-item {
+  display: flex;
+  gap: 10px;
+  font-size: .86rem;
+  color: var(--text-dim);
+  padding: 4px 0;
+}
+.legend-item .code {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ember-orange);
+  flex: none;
+  width: 22px;
+}
+
+/* ===== Menu state (loading / error) ===== */
+.menu-state {
+  padding: var(--sp-8) var(--sp-4);
+  color: var(--text-dim);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+}
+.menu-state[hidden] { display: none; }

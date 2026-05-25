@@ -1,0 +1,195 @@
+{
+  "_meta": {
+    "note": "MOCK-Daten — Stage 1 R&D-Prototyp. Getränke, Preise und Alkoholgehalt sind Platzhalter und vor Veröffentlichung durch den realen Restaurantbetreiber zu ersetzen.",
+    "juschg": "Alkoholische Getränke nach JuSchG §9 — Ausschank ab 16 Jahren, ausschliesslich In-House-Konsum. Kein Verkauf to-go, keine Online-Bestellung.",
+    "marker": "JUSCHG-MARKER",
+    "currency": "EUR"
+  },
+  "categories": [
+    { "id": "bier", "label": "Bier & Radler", "label_en": "Beer & Radler" },
+    { "id": "alkoholfrei", "label": "Alkoholfreie Getränke", "label_en": "Soft Drinks" },
+    { "id": "heiss", "label": "Heißgetränke", "label_en": "Hot Drinks" }
+  ],
+  "items": [
+    {
+      "id": "helles",
+      "name": "Helles vom Fass",
+      "name_en": "Helles Lager, draught",
+      "category": "bier",
+      "price_eur": 4.90,
+      "size": "0,5 l",
+      "alcohol_vol": "5,1 % vol",
+      "data-age-restriction": 16,
+      "data-allergens": ["A"],
+      "data-additives": []
+    },
+    {
+      "id": "weissbier",
+      "name": "Weißbier naturtrüb",
+      "name_en": "Wheat Beer, unfiltered",
+      "category": "bier",
+      "price_eur": 5.20,
+      "size": "0,5 l",
+      "alcohol_vol": "5,4 % vol",
+      "data-age-restriction": 16,
+      "data-allergens": ["A"],
+      "data-additives": []
+    },
+    {
+      "id": "kellerbier",
+      "name": "Kellerbier ungespundet",
+      "name_en": "Cellar Beer, unfiltered",
+      "category": "bier",
+      "price_eur": 5.00,
+      "size": "0,5 l",
+      "alcohol_vol": "5,2 % vol",
+      "data-age-restriction": 16,
+      "data-allergens": ["A"],
+      "data-additives": []
+    },
+    {
+      "id": "radler",
+      "name": "Radler",
+      "name_en": "Shandy",
+      "category": "bier",
+      "price_eur": 4.70,
+      "size": "0,5 l",
+      "alcohol_vol": "2,5 % vol",
+      "data-age-restriction": 16,
+      "data-allergens": ["A"],
+      "data-additives": []
+    },
+    {
+      "id": "spezi-schuss",
+      "name": "Spezi mit Schuss",
+      "name_en": "Spezi with a shot",
+      "category": "bier",
+      "price_eur": 5.50,
+      "size": "0,4 l",
+      "alcohol_vol": "4,0 % vol",
+      "data-age-restriction": 16,
+      "data-allergens": [],
+      "data-additives": [1]
+    },
+    {
+      "id": "spezi",
+      "name": "Hausgemachtes Spezi",
+      "name_en": "House Spezi",
+      "category": "alkoholfrei",
+      "price_eur": 3.90,
+      "size": "0,4 l",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    },
+    {
+      "id": "cola",
+      "name": "Cola",
+      "name_en": "Cola",
+      "category": "alkoholfrei",
+      "price_eur": 3.90,
+      "size": "0,33 l",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": [1, 8]
+    },
+    {
+      "id": "limonade",
+      "name": "Hausgemachte Holunder-Limonade",
+      "name_en": "House Elderflower Lemonade",
+      "category": "alkoholfrei",
+      "price_eur": 4.20,
+      "size": "0,4 l",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    },
+    {
+      "id": "apfelschorle",
+      "name": "Apfelschorle",
+      "name_en": "Apple Spritzer",
+      "category": "alkoholfrei",
+      "price_eur": 3.80,
+      "size": "0,4 l",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    },
+    {
+      "id": "wasser",
+      "name": "Mineralwasser still oder spritzig",
+      "name_en": "Mineral Water, still or sparkling",
+      "category": "alkoholfrei",
+      "price_eur": 3.20,
+      "size": "0,33 l",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    },
+    {
+      "id": "eistee",
+      "name": "Hausgemachter Pfirsich-Eistee",
+      "name_en": "House Peach Iced Tea",
+      "category": "alkoholfrei",
+      "price_eur": 3.90,
+      "size": "0,4 l",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    },
+    {
+      "id": "filterkaffee",
+      "name": "Filterkaffee",
+      "name_en": "Filter Coffee",
+      "category": "heiss",
+      "price_eur": 2.90,
+      "size": "Tasse",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "name_en": "Espresso",
+      "category": "heiss",
+      "price_eur": 2.80,
+      "size": "Tasse",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    },
+    {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "name_en": "Cappuccino",
+      "category": "heiss",
+      "price_eur": 3.60,
+      "size": "Tasse",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": ["G"],
+      "data-additives": []
+    },
+    {
+      "id": "kraeutertee",
+      "name": "Bio-Kräutertee",
+      "name_en": "Organic Herbal Tea",
+      "category": "heiss",
+      "price_eur": 3.20,
+      "size": "Kanne",
+      "alcohol_vol": null,
+      "data-age-restriction": null,
+      "data-allergens": [],
+      "data-additives": []
+    }
+  ]
+}

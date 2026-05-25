@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 156" role="img" aria-label="Ofnstube">
+  <title>Ofnstube — gestapelte Komposition mit Glut-Ring</title>
+  <!-- Stage 2: Wortmarke vor Finalisierung in Kurven konvertieren (Anti-Fehler E) -->
+  <defs>
+    <radialGradient id="ofnCore3" cx="50%" cy="44%" r="62%">
+      <stop offset="0%" stop-color="#ffe0b5"/>
+      <stop offset="40%" stop-color="#ff8a40"/>
+      <stop offset="100%" stop-color="#d9530f"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(78 6)">
+    <circle cx="32" cy="32" r="28" fill="none" stroke="#ff6b1a" stroke-width="3"
+            stroke-linecap="round" stroke-dasharray="120 56" transform="rotate(-128 32 32)"/>
+    <circle cx="32" cy="32" r="19" fill="none" stroke="#ff8a40" stroke-width="2.4"
+            stroke-linecap="round" stroke-dasharray="92 28" transform="rotate(64 32 32)" opacity="0.92"/>
+    <circle cx="32" cy="32" r="8.6" fill="url(#ofnCore3)"/>
+    <circle cx="32" cy="10.5" r="2.5" fill="#ff6b1a"/>
+  </g>
+  <text x="110" y="118" text-anchor="middle" font-family="Fraunces, 'Times New Roman', Georgia, serif"
+        font-size="38" font-weight="560" letter-spacing="-0.4" fill="#f5e6d3">Ofnstube</text>
+  <text x="110" y="140" text-anchor="middle" font-family="Inter, 'Segoe UI', sans-serif"
+        font-size="10.5" font-weight="600" letter-spacing="3.4" fill="#ff6b1a">CRAFT-BURGER · MÜNCHEN</text>
+</svg>

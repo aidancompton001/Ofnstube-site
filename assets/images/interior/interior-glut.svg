@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Glut-Ofen — Bildplatzhalter">
+  <rect width="1280" height="720" fill="#141210"/>
+  <rect width="1280" height="720" fill="none" stroke="#2e2a26" stroke-width="2"/>
+  <g fill="none" stroke="#ff6b1a" stroke-width="2" opacity="0.15">
+    <circle cx="640" cy="302" r="281"/>
+    <circle cx="640" cy="302" r="179"/>
+    <circle cx="640" cy="302" r="89"/>
+  </g>
+  <circle cx="640" cy="302" r="51" fill="#ff6b1a" opacity="0.5"/>
+  <text x="640" y="475" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="66" font-weight="560" fill="#f5e6d3">Glut-Ofen</text>
+  <text x="640" y="540" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" font-weight="700" letter-spacing="3" fill="#ff8a40">INNENRAUM-PLATZHALTER</text>
+</svg>
